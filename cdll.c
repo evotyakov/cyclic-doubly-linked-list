@@ -150,11 +150,9 @@ cdll *cdll_clone(const cdll *src)
             cdll_destroy(new_list);
             return NULL;
         }
-        current_node = current_node->next;
+        current_node = current_node->prev;
     }
     while (current_node != original_current);
-
-    cdll_move_prev(new_list);
 
     return new_list;
 }
